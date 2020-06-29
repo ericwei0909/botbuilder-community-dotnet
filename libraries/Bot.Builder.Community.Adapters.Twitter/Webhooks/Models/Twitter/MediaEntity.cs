@@ -1,4 +1,7 @@
-﻿namespace Bot.Builder.Community.Adapters.Twitter.Webhooks.Models.Twitter
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+
+namespace Bot.Builder.Community.Adapters.Twitter.Webhooks.Models.Twitter
 {
  
     public class MediaEntity
@@ -13,6 +16,19 @@
         public string expanded_url { get; set; }
         public string type { get; set; }
         public Sizes sizes { get; set; }
+        public Video video_info { get; set; }
+    }
+
+    public class Video
+    {
+        public List<Variant> variants;
+    }
+
+    public class Variant
+    {
+        public long bitrate { get; set; }
+        public string content_type { get; set; }
+        public string url { get; set; }
     }
 
     public class Sizes

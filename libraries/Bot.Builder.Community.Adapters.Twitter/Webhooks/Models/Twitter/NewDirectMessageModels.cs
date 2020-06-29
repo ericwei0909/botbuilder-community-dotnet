@@ -34,6 +34,9 @@ namespace Bot.Builder.Community.Adapters.Twitter.Webhooks.Models.Twitter
 
         [JsonProperty("quick_reply")]
         public NewEvent_QuickReply QuickReply { get; set; }
+
+        [JsonProperty("attachment")]
+        public NewEvent_Attachment Attachment { get; set; }
     }
 
     public class NewEvent_QuickReply
@@ -49,5 +52,20 @@ namespace Bot.Builder.Community.Adapters.Twitter.Webhooks.Models.Twitter
     {
         [JsonProperty("label")]
         public string Label { get; set; }
+    }
+
+    public class NewEvent_Attachment
+    {
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("media")]
+        public NewEvent_Media Media { get; set; }
+    }
+
+    public class NewEvent_Media
+    {
+        [JsonProperty("id")]
+        public string Id { get; set; }
     }
 }
